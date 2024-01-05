@@ -1,2 +1,2 @@
-# Briefify---A-Text-Summerizer
+# Briefify-A-Text-Summerizer
 A Text Summerizer App.

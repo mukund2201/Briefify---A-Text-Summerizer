@@ -2,7 +2,7 @@ from briefify.constants import *
 from briefify.utils.common import read_yaml, create_directories
 from briefify.entity import (DataIngestionConfig)
 from briefify.entity import (DataValidationConfig)
-
+from briefify.entity import (DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -42,6 +42,18 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_transformation_config(self)->DataTransformationConfig:
+            config = self.config.data_transformation
+
+            data_transformation_config = DataTransformationConfig(
+                   root_dir = config.root_dir,
+                   data_path = config.data_path,
+                   tokenizer_name=config.tokenizer_name
+
+            )
+
+            return data_transformation_config
     
 
 
